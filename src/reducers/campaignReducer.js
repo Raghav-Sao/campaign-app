@@ -85,15 +85,14 @@ export default function reducer(state = initialState, { type, payload } = {}) {
     }
 
     case UPDATE_FILTER_NAME: {
-      const { filterName } = payload,
-        start = (state.currentPage - 1) * 10 + 1
+      const { filterName } = payload
       let data = [...state.campaignList]
       if (filterName.length > 0) {
         data = data.filter(
           data => data.campaignName.toLowerCase().indexOf(filterName.toLowerCase()) > -1
         )
       }
-      const filterData = data.slice(start - 1, start + 9)
+      const filterData = data.slice(0, 9)
       return {
         ...state,
         currentPage: 1,
