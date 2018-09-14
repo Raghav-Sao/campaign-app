@@ -24,7 +24,7 @@ class CampaignList extends Component {
         <CampaignRow data={data} />
         {totalCount === 0 && (
           <div className="empty__campaign flex__container">
-            <span>No data Availabel</span>
+            <span>No data Available</span>
           </div>
         )}
         <Pagination

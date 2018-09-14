@@ -10,6 +10,7 @@
     div {
       flex: 1;
       align-items: center;
+      word-break: break-all;
       &.checkbox__id {
         flex: 0 0 25px;
       }
@@ -17,6 +18,7 @@
         flex: 0 0 1;
       }
       &.campaign__date {
+        word-break: break-word;
         flex: 0 0 3;
       }
       &.campaign__action {
