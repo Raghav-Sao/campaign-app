@@ -72,7 +72,11 @@ export default function reducer(state = initialState, { type, payload } = {}) {
       ]
       let data = []
       if (state.filterName.length > 0) {
-        data = state.data.filter(row => row.id !== id)
+        data = state.campaignList.filter(
+          row =>
+            row.id !== id &&
+            row.campaignName.toLowerCase().indexOf(state.filterName.toLowerCase()) > -1
+        )
       } else {
         data = [...campaignList]
       }
